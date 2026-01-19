@@ -1,0 +1,248 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f1f5f9;
+  margin: 0;
+}
+
+h2 {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+/* Cards */
+.form, .invoice {
+  background: #fff;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+/* Inputs */
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* Buttons */
+button {
+  background: #2563eb;
+  color: white;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.add-btn {
+  background: #64748b;
+  margin-bottom: 12px;
+}
+
+/* Invoice */
+.invoice {
+  min-height: 1120px; /* A4 height */
+}
+
+.invoice-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#logoPreview {
+  max-height: 60px;
+}
+
+.total {
+  text-align: right;
+  font-size: 18px;
+  margin-top: 16px;
+}
+
+/* Templates */
+.invoice.simple {
+  border-top: 4px solid #2563eb;
+}
+
+.invoice.professional {
+  border-top: 4px solid #16a34a;
+  background: #f8fafc;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 15px;
+  }
+
+  .form, .invoice {
+    padding: 16px;
+  }
+
+  input, select {
+    padding: 8px;
+    margin-bottom: 10px;
+  }
+
+  button {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  table {
+    font-size: 14px;
+  }
+
+  th, td {
+    padding: 8px;
+  }
+
+  .invoice {
+    min-height: auto;
+  }
+
+  .invoice-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  #logoPreview {
+    max-height: 50px;
+  }
+
+  .total {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  h2 {
+    font-size: 20px;
+    margin: 15px 0;
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  .form, .invoice {
+    padding: 12px;
+  }
+
+  input, select {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  button {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .add-btn {
+    margin-bottom: 10px;
+  }
+
+  table {
+    font-size: 12px;
+  }
+
+  th, td {
+    padding: 6px;
+  }
+
+  #logoPreview {
+    max-height: 40px;
+  }
+
+  .total {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  h2 {
+    font-size: 16px;
+    margin: 10px 0;
+  }
+
+  .container {
+    padding: 8px;
+  }
+
+  .form, .invoice {
+    padding: 10px;
+  }
+
+  input, select {
+    padding: 6px;
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+
+  button {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  table {
+    font-size: 11px;
+  }
+
+  th, td {
+    padding: 4px;
+  }
+
+  .invoice-header {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  #logoPreview {
+    max-height: 30px;
+  }
+
+  .total {
+    font-size: 12px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 4px;
+    font-weight: 500;
+  }
+}
