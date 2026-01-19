@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invoice Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>Invoice Generator</h2>
+
+<div class="container">
+
+  <!-- FORM -->
+  <div class="form">
+    <h3>Invoice Details</h3>
+
+    <input type="file" id="logoInput" accept="image/*">
+
+    <input type="text" id="company" placeholder="Company Name">
+    <input type="text" id="client" placeholder="Client Name">
+
+    <input type="text" id="invoiceNo" placeholder="Invoice Number">
+    <input type="date" id="invoiceDate">
+
+    <label>Template</label>
+    <select id="template">
+      <option value="simple">Simple</option>
+      <option value="professional">Professional</option>
+    </select>
+
+    <table id="items">
+      <tr>
+        <th>Description</th>
+        <th>Qty</th>
+        <th>Price</th>
+        <th>Total</th>
+      </tr>
+      <tr>
+        <td><input></td>
+        <td><input type="number" value="1" oninput="calculate()"></td>
+        <td><input type="number" value="0" oninput="calculate()"></td>
+        <td class="lineTotal">0</td>
+      </tr>
+    </table>
+
+    <button class="add-btn" onclick="addRow()">+ Add Item</button>
+
+    <label>Tax (%)</label>
+    <input type="number" id="tax" value="0" oninput="calculate()">
+
+    <button onclick="generatePDF()">Generate PDF</button>
+  </div>
+
+  <!-- INVOICE PREVIEW -->
+  <div class="invoice simple" id="invoice">
+    <div class="invoice-header">
+      <img id="logoPreview">
+      <div>
+        <h3 id="pCompany"></h3>
+        <p>Invoice #: <span id="pInvoice"></span></p>
+        <p>Date: <span id="pDate"></span></p>
+      </div>
+    </div>
+
+    <p>Bill To: <strong id="pClient"></strong></p>
+
+    <table id="previewTable">
+      <thead>
+        <tr>
+          <th>Description</th>
+          <th>Qty</th>
+          <th>Price</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <div class="total">
+      Total: ₹<span id="grandTotal">0</span>
+    </div>
+  </div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
